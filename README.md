@@ -13,4 +13,5 @@ Write an app in NBC that does the following:
     a.  Forward(distance)  
     b.  Turn(angle)  
 
-Compile, load and run your app
+Compile, load and run your app.  
+When you are finished, fork this repository, upload your NBC code and create a pull request.
