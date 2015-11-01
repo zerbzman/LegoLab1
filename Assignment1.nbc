@@ -1,0 +1,26 @@
+#define MOVE_TIME 800
+#define TURN_TIME 200
+
+thread main
+AskForInput:
+ //get number of sides from user between 3-8
+ set aaa, 5
+ brcmp LT, AskForInput, aaa, 3
+ brcmp GT, AskForInput, aaa, 8
+ //divide 360 by the number of sides
+ div bbb, 360, aaa
+
+ //LOOP
+DrivePolygon:
+ //move 3 feet or something
+ OnFwd(OUT_BC,100)
+ wait MOVE_TIME
+ //turn 360/n degrees
+ OnRev(OUT_C,100)
+ wait TURN_TIME
+ //decrement the loop
+ sub aaa, aaa, 1
+ brtst GT, DrivePolygon, aaa
+
+ exit
+endt
